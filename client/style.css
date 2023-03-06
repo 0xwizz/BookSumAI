@@ -20,9 +20,21 @@ body {
   text-align: center;
 }
 
-input:focus, textarea:focus {
-  outline: none;
-  box-shadow: none;
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  margin-top: 15px;
+  margin-bottom: -19px;
+  border-radius: 10px;
+  text-align: center;
+  border: 2px solid rgb(14, 134, 190); /* add a green border */
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3); /* add a box-shadow */
 }
 
 header {
@@ -32,15 +44,15 @@ header {
   background-color: #333;
   color: white;
   padding: 5px;
-  margin-top: 15px;
-  border-radius: 10px;
-  margin: 10px auto;
-  width: 97%;
+  margin: 13px auto 0;
+  margin-top: 0px;
+  width: 100%;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  border: 2px solid rgb(14, 134, 190); /* add a green border */
+  border-top: 2px solid rgb(14, 134, 190); /* add a green border */
+  border-bottom: 2px solid rgb(14, 134, 190);
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3); /* add a box-shadow */
 }
 
@@ -58,6 +70,7 @@ header {
 h1 {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   margin-bottom: 20px;
   color: #fff;
   font-family: 'Russo One', sans-serif;
@@ -65,8 +78,19 @@ h1 {
   margin: 0;
   align-items: center;
 }
+
+.warning {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: normal;
+  font-family: 'Russo One', sans-serif;
+}
+
 p {
-  margin-top: 60px;
+  margin-top: 50px;
   color: #fff;
   font-size: 16px;
   margin-bottom: 40px;
@@ -145,7 +169,7 @@ button:hover {
   padding: 20px;
   text-align: left;
   overflow-y: scroll;
-  height: 500px;
+  height: 520px;
   color: #eee;
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
@@ -178,28 +202,6 @@ button:hover {
   font-weight: 500;
   }
 
-footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #333;
-  color: white;
-  padding: 10px;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  border-radius: 10px;
-  text-align: center;
-  border: 2px solid rgb(14, 134, 190); /* add a green border */
-  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3); /* add a box-shadow */
-}
 
-.warning {
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 16px;
-  font-weight: normal;
-  font-family: 'Russo One', sans-serif;
-}
+
+
