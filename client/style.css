@@ -14,28 +14,14 @@ body {
 .container {
   background-color: #222;
   border-radius: 5px;
-  margin: 13px auto;
+  
   max-width: 100%;
   padding: 20px;
+  
   text-align: center;
 }
 
 
-footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #333;
-  color: white;
-  padding: 10px;
-  margin-top: 15px;
-  margin-bottom: -19px;
-  border-radius: 10px;
-  text-align: center;
-  border: 2px solid rgb(14, 190, 55); /* add a green border */
-  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3); /* add a box-shadow */
-}
 
 header {
   display: flex;
@@ -51,8 +37,8 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  border-top: 2px solid rgb(14, 190, 55); /* add a green border */
-  border-bottom: 2px solid rgb(14, 190, 55);
+  border-top: 1.9px solid rgb(14, 190, 55); /* add a green border */
+  border-bottom: 1.9px solid rgb(14, 190, 55);
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3); /* add a box-shadow */
 }
 
@@ -158,19 +144,20 @@ button {
 }
 
 button:hover {
-  background-color: #1090d5aa;
+  background-color: rgb(14, 190, 55);
 }
 
 #chat-container {
   background-color: #444;
   border-radius: 10px;
   box-shadow: 0 1px 5px rgba(199, 199, 199, 0.388);
-  margin: 20px auto;
+ margin-top: 20px;
+ margin-bottom: 5px;
   max-width: 100%;
   padding: 20px;
   text-align: left;
   overflow-y: scroll;
-  height: 520px;
+  height: 600px;
   color: #eee;
   font-family: 'Roboto', sans-serif;
   font-size: 16px;

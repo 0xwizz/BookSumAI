@@ -59,17 +59,10 @@ const typeText = (messageDiv, text) => {
     }
   }, 50, lines);
 
-  const loaderIntervalId = loader(messageDiv);
+ 
 
-  setTimeout(() => {
-    clearInterval(intervalId);
-    clearInterval(loaderIntervalId);
-    messageDiv.querySelector('.loader').style.display = 'none'; // hide the loader div
-  }, lines.length * 50);
+
 };
-
-
-
 
 const handleSubmit = async (e) => {
   e.preventDefault();
@@ -85,7 +78,7 @@ const handleSubmit = async (e) => {
   const loadingStripe = chatStripe(true, 'Loading...', null, true);
   chatContainer.innerHTML += loadingStripe;
 
-  const response = await fetch('https://booktest5.onrender.com', {
+  const response = await fetch('http://localhost:5003', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -108,10 +101,11 @@ const handleSubmit = async (e) => {
     const botStripe = chatStripe(true, '', generateUniqueId(), false); // add an empty text and isLoading=false to prevent the first plain text
     chatContainer.innerHTML += botStripe;
     const botStripeEl = document.querySelector(`#${botStripe.match(/id="(.*)"/)[1]}`);
-    typeText(botStripeEl, parsedData);
-  }
-  
-};
 
+    setTimeout(() => {
+      typeText(botStripeEl, parsedData);
+    }, 90);
+  }
+};
 
 form.addEventListener('submit', handleSubmit);
