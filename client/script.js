@@ -78,7 +78,7 @@ const handleSubmit = async (e) => {
   const loadingStripe = chatStripe(true, 'Loading...', null, true);
   chatContainer.innerHTML += loadingStripe;
 
-  const response = await fetch('http://localhost:5003', {
+  const response = await fetch('https://booktest5.onrender.com', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
