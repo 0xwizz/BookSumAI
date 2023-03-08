@@ -68,6 +68,13 @@ const handleSubmit = async (e) => {
   const skills = formData.get('skills');
   const balance = formData.get('balance');
 
+  if (!skills) {
+    const errorMessage = chatStripe(true, 'Please enter both book title and author.', generateUniqueId());
+    chatContainer.innerHTML += errorMessage;
+    return;
+  }
+  
+
   clearChatContainer();
 
   // Add loading stripe
