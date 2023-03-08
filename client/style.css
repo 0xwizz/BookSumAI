@@ -42,15 +42,6 @@ header {
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3); /* add a box-shadow */
 }
 
-.loader {
-  display: inline-block;
-  vertical-align: middle;
-  margin-left: 10px;
-  font-size: 0.8em;
-  font-weight: bold;
-  color: #666;
-}
-
 
 
 h1 {
@@ -85,15 +76,32 @@ p {
 }
 
 .question {
+  max-width: 500px;
+  margin: 0 auto;
+  font-family: 'Open Sans', sans-serif;
   margin-bottom: 10px;
-  text-align: left;
+  text-align: center;
   color: white;
   font-family: 'Open Sans', sans-serif;
   
 }
+
+input[type="text"] {
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 1px 5px rgba(199, 199, 199, 0.388);
+  font-size: 16px;
+  padding: 10px;
+  max-width: 40%;
+  background-color: #333;
+  color: #fff;
+}
+
 .placeholder {
   color: #444;
   font-size: 16px;
+  text-align: center;
   font-weight: normal;
   font-family: 'Russo One', sans-serif;
 }
@@ -112,17 +120,6 @@ label {
   margin-bottom: 5px;
   color: #fff;
   font-size: 18px;
-}
-
-input[type="text"] {
-  border: none;
-  border-radius: 5px;
-  box-shadow: 0 1px 5px rgba(199, 199, 199, 0.388);
-  font-size: 16px;
-  padding: 10px;
-  width: 100%;
-  background-color: #333;
-  color: #fff;
 }
 
 button {
