@@ -37,8 +37,8 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  border-top: 1.9px solid rgb(14, 190, 55); /* add a green border */
-  border-bottom: 1.9px solid rgb(14, 190, 55);
+  border-top: 1.9px solid rgb(63, 153, 226); /* add a green border */
+  border-bottom: 1.9px solid rgb(63, 153, 226);
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3); /* add a box-shadow */
 }
 
@@ -67,16 +67,16 @@ h1 {
 }
 
 p {
-  margin-top: 50px;
+  margin-top: 65px;
   color: #fff;
   font-size: 16px;
-  margin-bottom: 40px;
+  margin-bottom: 35px;
   font-weight: bold;
   font-family: 'Roboto', sans-serif;
 }
 
 .question {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   text-align: center;
   color: white;
   padding-left: 60px;
@@ -121,7 +121,7 @@ input[type="text"] {
 }
 
 button {
-  background-color: rgb(14, 190, 55);;
+  background-color: rgb(63, 153, 226);;
   border: none;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
@@ -131,7 +131,7 @@ button {
   width: 190px;
   font-size: 16px;
   margin-top: 15px;
-  margin-bottom: 4px;
+  margin-bottom: 15px;
   padding: 10px 25px;
   transition: background-color 0.09s ease-in-out;
   font-size: 0.8em;
