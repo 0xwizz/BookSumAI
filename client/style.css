@@ -136,15 +136,20 @@ button {
   transition: background-color 0.09s ease-in-out;
   font-size: 0.8em;
   font-family: 'Russo One', sans-serif;
+  outline: none; /*remove outline on click*/
 }
 
 button:hover {
   background-color: rgb(44, 129, 199);
 }
 
+button:focus, /*add focus styling*/
 button:active {
   background-color: rgb(75, 157, 224);
+  box-shadow: none; /*remove box shadow on click*/
+  outline: none; /*remove outline on click*/
 }
+
 
 
 #chat-container {

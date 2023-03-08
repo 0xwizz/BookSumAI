@@ -132,7 +132,7 @@ const handleSubmit = async (e) => {
     setTimeout(() => {
       buttonClicked = false;
       form.querySelector('button').removeAttribute('disabled');
-    }, 5000);
+    }, 1000);
   }
 };
 
