@@ -60,6 +60,8 @@ const typeText = (messageDiv, text) => {
   },);
 }
 
+let buttonClicked = false;
+
 const handleSubmit = async (e) => {
   e.preventDefault();
 
@@ -73,7 +75,10 @@ const handleSubmit = async (e) => {
     chatContainer.innerHTML += errorMessage;
     return;
   }
-  
+
+  if (buttonClicked) {
+    return;
+  }
 
   clearChatContainer();
 
@@ -82,6 +87,9 @@ const handleSubmit = async (e) => {
   chatContainer.innerHTML += loadingStripe;
 
   try {
+    buttonClicked = true;
+    form.querySelector('button').setAttribute('disabled', true);
+
     const response = await fetch('https://booktest5.onrender.com', {
       method: 'POST',
       headers: {
@@ -105,22 +113,28 @@ const handleSubmit = async (e) => {
     loadingStripeEl.parentNode.removeChild(loadingStripeEl);
 
     // Add bot stripe with response
-const botStripe = chatStripe(true, '', generateUniqueId(), false); // add an empty text and isLoading=false to prevent the first plain text
-chatContainer.innerHTML += botStripe;
-const botStripeEl = document.querySelector(`#${botStripe.match(/id="(.*)"/)[1]}`);
-typeText(botStripeEl, parsedData);
+    const botStripe = chatStripe(true, '', generateUniqueId(), false); // add an empty text and isLoading=false to prevent the first plain text
+    chatContainer.innerHTML += botStripe;
+    const botStripeEl = document.querySelector(`#${botStripe.match(/id="(.*)"/)[1]}`);
+    typeText(botStripeEl, parsedData);
 
+  } catch (error) {
+    console.error(error);
+    // Remove loading stripe
+    const loadingStripeEl = document.querySelector('.bot-stripe .loader').parentNode.parentNode;
+    loadingStripeEl.parentNode.removeChild(loadingStripeEl);
 
-} catch (error) {
-  console.error(error);
-  // Remove loading stripe
-  const loadingStripeEl = document.querySelector('.bot-stripe .loader').parentNode.parentNode;
-  loadingStripeEl.parentNode.removeChild(loadingStripeEl);
+    // Add error stripe
+    const errorStripe = chatStripe(true, 'Sorry, an error occurred. Please try again later.', generateUniqueId(), false);
+    chatContainer.innerHTML += errorStripe;
 
-  // Add error stripe
-const errorStripe = chatStripe(true, 'Sorry, an error occurred. Please try again later.', generateUniqueId(), false);
-chatContainer.innerHTML += errorStripe;
-}
+  } finally {
+    setTimeout(() => {
+      buttonClicked = false;
+      form.querySelector('button').removeAttribute('disabled');
+    }, 5000);
+  }
 };
+
 
 form.addEventListener('submit', handleSubmit);
