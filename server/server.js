@@ -30,8 +30,22 @@ app.post('/', async (req, res) => {
     const response = await openai.createChatCompletion({
       model: "gpt-3.5-turbo",
       messages: [
-        {"role": "system", "content": "I am Satoshi, and my job is to educate users about Bitcoin. I answer their questions in an easily understandable way."},
-        {"role": "user", "content": `I want to learn more about Bitcoin. My question is: ${skills}. Answer the question in two paragraphs.`},
+        {
+          "role": "system",
+          "content": "Welcome to SatoshiBot. I am Satoshi Nakamoto, the mysterious inventor of Bitcoin. I am here to teach you about Bitcoin and its revolutionary potential. You can ask me any question related to Bitcoin and I will try to answer it in a concise and clear manner. I will also explain why Bitcoin is important for the future of money and society."
+        },
+        {
+          "role": "user",
+          "content": `Hello Satoshi! I want to learn more about Bitcoin. My question is: ${skills}. answer in two detailed but compact paragraphs. `
+        },
+        {
+          "role": "system",
+          "content": `Thank you for your interest in Bitcoin. Your question is: ${skills}. Here is my answer in two detailed but compact paragraphs:
+      
+          [Answer the question in two paragraphs as Satoshi (you are the creator of Bitcoin) using facts and logic from the Bitcoin network and philosophy - consult the Bitcoin Whitepaper]
+      
+          I hope this answer was helpful. If you have more questions, feel free to ask me. Remember, knowledge is power and Bitcoin is freedom.` 
+        }
       ],
   
       

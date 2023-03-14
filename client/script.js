@@ -40,10 +40,10 @@ const typeText = (messageDiv, text) => {
 
   const typeParagraph = (paragraph, index) => {
     const paragraphEl = document.createElement('p');
-    paragraphEl.style.marginBottom = '0.01em'; // Add this line to set the margin-bottom
-  
+    paragraphEl.style.marginBottom = '0.2em';
+
     messageDiv.querySelector('.bot-text').appendChild(paragraphEl);
-  
+
     let currentChar = 0;
     const intervalId = setTimeout(function printText() {
       if (currentChar < paragraph.length) {
@@ -137,7 +137,7 @@ const handleSubmit = async (e) => {
     setTimeout(() => {
       buttonClicked = false;
       form.querySelector('button').removeAttribute('disabled');
-    }, 1000);
+    }, 9000);
   }
 };
 
