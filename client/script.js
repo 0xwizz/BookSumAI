@@ -40,7 +40,7 @@ const typeText = (messageDiv, text) => {
 
   const typeParagraph = (paragraph, index) => {
     const paragraphEl = document.createElement('p');
-    paragraphEl.style.marginBottom = '0.2em';
+    paragraphEl.style.marginBottom = '1em';
 
     messageDiv.querySelector('.bot-text').appendChild(paragraphEl);
 
@@ -58,6 +58,8 @@ const typeText = (messageDiv, text) => {
       }
     }, charsPerInterval);
   };
+
+
   
 
   typeParagraph(paragraphs[0], 0);
@@ -76,7 +78,7 @@ const handleSubmit = async (e) => {
 
 
   if (!skills) {
-    const errorMessage = chatStripe(true, 'Please enter both book title and author.', generateUniqueId());
+    const errorMessage = chatStripe(true, 'Please enter a question.', generateUniqueId());
     chatContainer.innerHTML += errorMessage;
     return;
   }
@@ -88,7 +90,7 @@ const handleSubmit = async (e) => {
   clearChatContainer();
 
   // Add loading stripe
-  const loadingStripe = chatStripe(true, 'Thinking...', null, true);
+  const loadingStripe = chatStripe(true, 'Satoshi is typing...', null, true);
   chatContainer.innerHTML += loadingStripe;
 
   try {

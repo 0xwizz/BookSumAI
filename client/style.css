@@ -68,8 +68,8 @@ p {
   margin-bottom: 20px;
   text-align: center;
   color: white;
-  padding-left: 40px;
-  padding-right: 40px;
+  padding-left: 5px;
+  padding-right: 5px;
   font-family: 'Open Sans', sans-serif;
   
 }
@@ -149,7 +149,7 @@ button:active {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  font-weight: 400;
+  font-style: normal;
   }
   
   #chat-container ul {
@@ -162,6 +162,8 @@ button:active {
   display: flex;
   margin-bottom: 10px;
   }
+
+  
   
   #chat-container .bot {
   justify-content: flex-start;
@@ -172,7 +174,7 @@ button:active {
   }
   
   #chat-container .message { 
-    font-family: 'Montserrat', sans-serif; 
+    font-family: 'Russo One', sans-serif;
     color: #ccc; 
     font-weight: 400; 
     font-style: normal; 
