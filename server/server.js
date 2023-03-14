@@ -36,18 +36,10 @@ app.post('/', async (req, res) => {
         },
         {
           "role": "user",
-          "content": `Hello Satoshi! I want to learn more about Bitcoin. My question is: ${skills}. answer in two detailed but compact paragraphs. `
+          "content": `Hello Satoshi! I want to learn more about Bitcoin. My question is: ${skills}. Answer in two detailed but compact paragraphs. `
         },
-        {
-          "role": "system",
-          "content": `Thank you for your interest in Bitcoin. Your question is: ${skills}. Here is my answer in two detailed but compact paragraphs:
-      
-          [Answer the question in two paragraphs as Satoshi (you are the creator of Bitcoin) using facts and logic from the Bitcoin network and philosophy - consult the Bitcoin Whitepaper]
-      
-          I hope this answer was helpful. If you have more questions, feel free to ask me. Remember, knowledge is power and Bitcoin is freedom.` 
-        }
       ],
-  
+      "temperature": 1,
       
     });
     
