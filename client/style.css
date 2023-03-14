@@ -37,8 +37,8 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  border-top: 1.9px solid rgb(63, 153, 226); /* add a green border */
-  border-bottom: 1.9px solid rgb(63, 153, 226);
+  border-top: 2px solid #F7931A; /* add a green border */
+  border-bottom: 2px solid #F7931A;
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3); /* add a box-shadow */
 }
 
@@ -56,15 +56,6 @@ h1 {
   align-items: center;
 }
 
-.warning {
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 14px;
-  font-weight: normal;
-  font-family: 'Roboto', sans-serif;
-}
 
 p {
   margin-top: 65px;
@@ -92,14 +83,6 @@ p {
   font-family: 'Russo One', sans-serif;
 }
 
-.or {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  color: #fff;
-  font-size: 16px;
-  font-weight: normal;
-  font-family: 'Russo One', sans-serif;
-}
 
 label {
   display: block;
@@ -121,7 +104,7 @@ input[type="text"] {
 }
 
 button {
-  background-color: rgb(63, 153, 226);
+  background-color: #F7931A;
   border: none;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
@@ -150,6 +133,9 @@ button:active {
   outline: none; /*remove outline on click*/
 }
 
+.text p:first-child {
+  margin-top: 5px;
+}
 
 
 #chat-container {
@@ -157,7 +143,7 @@ button:active {
   border-radius: 10px;
   box-shadow: 0 1px 5px rgba(199, 199, 199, 0.388);
  margin-top: 20px;
- margin-bottom: 5px;
+ margin-bottom: 0px;
   max-width: 100%;
   padding: 20px;
   text-align: left;

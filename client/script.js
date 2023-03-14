@@ -36,29 +36,34 @@ clearChatContainer();
 
 const typeText = (messageDiv, text) => {
   const charsPerInterval = 5;
-  const lines = text.split('\n').filter(Boolean); // Split text into individual lines
-  let currentLine = 0;
+  const paragraphs = text.split('\n\n').filter(Boolean);
 
-  const intervalId = setInterval(() => {
-    if (currentLine < lines.length) {
-      const line = lines[currentLine];
-      if (line.trim().startsWith("Overview:")) {
-        messageDiv.querySelector('.bot-text').innerHTML += `<br />\n<b>${line}</b><br />\n`; // Add bold tags to Overview
-        messageDiv.querySelector('.bot-text').innerHTML += '<br />\n'; // Add line break
-      } else if (line.trim().startsWith("Key Takeaways:")) {
-        messageDiv.querySelector('.bot-text').innerHTML += `<br />\n<b>${line}</b><br />\n`; // Add bold tags to Key Takeaways
-        messageDiv.querySelector('.bot-text').innerHTML += '<br />\n'; // Add line break
-      } else if (line.trim().startsWith("-")) {
-        messageDiv.querySelector('.bot-text').innerHTML += `${line}<br />\n`; // Add bullet point
+  const typeParagraph = (paragraph, index) => {
+    const paragraphEl = document.createElement('p');
+    paragraphEl.style.marginBottom = '0.01em'; // Add this line to set the margin-bottom
+  
+    messageDiv.querySelector('.bot-text').appendChild(paragraphEl);
+  
+    let currentChar = 0;
+    const intervalId = setTimeout(function printText() {
+      if (currentChar < paragraph.length) {
+        paragraphEl.innerHTML += paragraph[currentChar];
+        currentChar += 1;
+        setTimeout(printText, charsPerInterval);
       } else {
-        messageDiv.querySelector('.bot-text').innerHTML += `${line}<br />\n`; // Add line break
+        clearTimeout(intervalId);
+        if (index < paragraphs.length - 1) {
+          typeParagraph(paragraphs[index + 1], index + 1);
+        }
       }
-      currentLine += 1;
-    } else {
-      clearInterval(intervalId);
-    }
-  },);
-}
+    }, charsPerInterval);
+  };
+  
+
+  typeParagraph(paragraphs[0], 0);
+};
+
+
 
 let buttonClicked = false;
 
@@ -68,7 +73,7 @@ const handleSubmit = async (e) => {
   const form = e.target;
   const formData = new FormData(form);
   const skills = formData.get('skills');
-  const balance = formData.get('balance');
+
 
   if (!skills) {
     const errorMessage = chatStripe(true, 'Please enter both book title and author.', generateUniqueId());
@@ -83,7 +88,7 @@ const handleSubmit = async (e) => {
   clearChatContainer();
 
   // Add loading stripe
-  const loadingStripe = chatStripe(true, 'Generating a detailed summary for you...', null, true);
+  const loadingStripe = chatStripe(true, 'Thinking...', null, true);
   chatContainer.innerHTML += loadingStripe;
 
   try {
@@ -97,7 +102,7 @@ const handleSubmit = async (e) => {
       },
       body: JSON.stringify({
         skills: skills,
-        balance: balance,
+    
       }),
     });
 

@@ -25,13 +25,13 @@ app.post('/', async (req, res) => {
   try {
     const skills = req.body.skills;
     const enjoys = req.body.enjoys;
-    const balance = req.body.balance;
+  
 
     const response = await openai.createChatCompletion({
       model: "gpt-3.5-turbo",
       messages: [
-        {"role": "system", "content": "As an expert experienced sage, I can produce incredible long detailed summaries of books, allowing users to speed consume information. People use me to supplement reading fuul books"},
-        {"role": "user", "content": `Please write a very detailed, long informative sumary of the following book. This should supplement reading the whole book. The title is ${skills} and the author is ${balance}. Include a detailed main explaination titled "Overview" and bullet pointed info and teachings found within, titled "Key Takeaways". Do not include any other text outside these parameters, do not include title and author above`},
+        {"role": "system", "content": "I am Satoshi, and my job is to educate users about Bitcoin. I answer their questions in an easily understandable way."},
+        {"role": "user", "content": `I want to learn more about Bitcoin. My question is: ${skills}. Answer the question in two paragraphs.`},
       ],
   
       
