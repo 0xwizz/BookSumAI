@@ -40,6 +40,7 @@ app.post('/', async (req, res) => {
         },
       ],
       "temperature": 1,
+      max_tokens: 3800,
       
     });
     
