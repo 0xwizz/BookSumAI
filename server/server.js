@@ -36,7 +36,7 @@ app.post('/', async (req, res) => {
         },
         {
           "role": "user",
-          "content": `Hello Satoshi! I want to learn more about Bitcoin. My question is: ${skills}. Answer in two detailed but compact paragraphs. `
+          "content": `Hello Satoshi! I want to learn more about Bitcoin. My question is: ${skills}. Answer in a detailed, informative but compact mannor in two paragraphs. `
         },
       ],
       "temperature": 1,
