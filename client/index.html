@@ -6,14 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SatoshiBot</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+      #generate-btn:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      .chat-container-wrapper {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      #chat-container {
+        flex-grow: 1;
+      }
+    </style>
   </head>
-  <body class="bg-gray-800 text-white">
+  <body class="bg-gray-800 text-white flex flex-col min-h-screen">
     <header class="bg-gray-900 p-4">
       <div class="container mx-auto">
-        <h1 class="text-white text-4xl font-bold">SatoshiBot</h1>
+        <h1 class="text-white text-4xl font-bold text-center">SatoshiBot</h1>
       </div>
     </header>
-    <div class="container mx-auto px-4 py-10">
+    <div class="container mx-auto px-4 py-10 flex-grow flex flex-col">
       <p class="text-center text-white mb-6">Looking to learn about Bitcoin? Ask Satoshi!</p>
 
       <form id="form" class="flex justify-center">
@@ -27,14 +41,15 @@
           />
           <button
             id="generate-btn"
-            class="w-full mt-4 py-2 bg-yellow-500 text-black font-bold rounded-md hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-600"
+            class="w-full mt-4 py-2 bg-yellow-500 text-black font-bold rounded-md transition-all duration-150 hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-600"
           >
             GO!
           </button>
         </div>
       </form>
-      <div id="chat-container" class="mt-8 bg-gray-700 text-white rounded-md p-6 h-96 overflow-y-scroll"></div>
-      
+      <div class="chat-container-wrapper mt-8 bg-gray-700 text-white rounded-md p-6 flex-grow">
+        <div id="chat-container" class="overflow-y-scroll h-full"></div>
+      </div>
     </div>
     <script src="script.js" type="module"></script>
   </body>
